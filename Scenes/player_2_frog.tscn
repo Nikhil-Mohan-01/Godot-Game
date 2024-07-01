@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn7gpvvjrgnea"]
+
+[ext_resource type="Script" path="res://SRC/player2_movement.gd" id="1_5sne0"]
+[ext_resource type="Texture2D" uid="uid://dc6uuhw4f1xqy" path="res://Assets/icon.svg" id="2_uggg7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iflqm"]
+radius = 44.2857
+height = 88.5714
+
+[node name="Player2_Frog" type="CharacterBody2D"]
+scale = Vector2(0.33, 0.33)
+script = ExtResource("1_5sne0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_uggg7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.4, 1.48986)
+shape = SubResource("CapsuleShape2D_iflqm")
+debug_color = Color(0.226394, 0.638286, 0, 0.42)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 42)

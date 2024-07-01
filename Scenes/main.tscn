@@ -1,15 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://swngeg5rhhdh"]
+[gd_scene load_steps=7 format=3 uid="uid://swngeg5rhhdh"]
 
-[ext_resource type="PackedScene" uid="uid://du0mt2887weg6" path="res://Scenes/player_1.tscn" id="1_sviiv"]
+[ext_resource type="PackedScene" uid="uid://du0mt2887weg6" path="res://Scenes/player_1_frog.tscn" id="1_sviiv"]
 [ext_resource type="Texture2D" uid="uid://dc6uuhw4f1xqy" path="res://Assets/icon.svg" id="2_ro2f5"]
+[ext_resource type="PackedScene" uid="uid://diu0kwgjexue3" path="res://Scenes/player_1.tscn" id="2_t0cvt"]
+[ext_resource type="PackedScene" uid="uid://ribhc2dxoqkq" path="res://Scenes/player_2.tscn" id="4_1mnjg"]
+[ext_resource type="PackedScene" uid="uid://dn7gpvvjrgnea" path="res://Scenes/player_2_frog.tscn" id="5_a55v7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msm44"]
 size = Vector2(128, 126)
 
 [node name="main" type="Node2D"]
 
-[node name="Player1" parent="." instance=ExtResource("1_sviiv")]
+[node name="Frog Player" parent="." instance=ExtResource("1_sviiv")]
 position = Vector2(482, 271)
+
+[node name="Player 1" parent="." instance=ExtResource("2_t0cvt")]
+position = Vector2(326, 252)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 338)
@@ -40,3 +46,9 @@ texture = ExtResource("2_ro2f5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 shape = SubResource("RectangleShape2D_msm44")
+
+[node name="Player2" parent="." instance=ExtResource("4_1mnjg")]
+position = Vector2(620, 251)
+
+[node name="Player2_Frog" parent="." instance=ExtResource("5_a55v7")]
+position = Vector2(732, 283)

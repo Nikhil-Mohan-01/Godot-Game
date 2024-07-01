@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-class_name mendulum
+class_name tendulum
 @onready var sprite = $Sprite2D
 @onready var hitbox = $CollisionShape2D
 @onready var pos = $Marker2D
@@ -26,7 +26,7 @@ var angular_acceleration = 0.0
 func _input(event):
 	if event is InputEventKey:
 		match event.keycode:
-			KEY_W:
+			KEY_I:
 				jump = event.pressed
 
 func _physics_process(delta):
@@ -66,9 +66,9 @@ func _add_angular_velocity(force:float) -> void:
 
 func _game_input() -> void:
 	var dlr:float = 0
-	if Input.is_key_pressed(KEY_A):
+	if Input.is_key_pressed(KEY_J):
 		dlr += 1
-	elif Input.is_key_pressed(KEY_D):
+	elif Input.is_key_pressed(KEY_L):
 		dlr -= 1
 	_add_angular_velocity((dlr * 0.3) * 0.02)
 

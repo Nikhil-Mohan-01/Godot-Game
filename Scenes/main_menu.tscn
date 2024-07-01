@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://3abke745wp16"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 203.0
+offset_bottom = 23.0
+text = "Player 1 Character Classes"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 65.0
+offset_top = 39.0
+offset_right = 122.0
+offset_bottom = 70.0
+text = "Player"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 73.0
+offset_top = 96.0
+offset_right = 116.0
+offset_bottom = 127.0
+text = "Frog"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 227.0
+offset_top = 1.0
+offset_right = 430.0
+offset_bottom = 24.0
+text = "Player 2 Character Classes"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 292.0
+offset_top = 40.0
+offset_right = 349.0
+offset_bottom = 71.0
+text = "Player"
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 300.0
+offset_top = 97.0
+offset_right = 343.0
+offset_bottom = 128.0
+text = "Frog"
