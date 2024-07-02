@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://swngeg5rhhdh"]
+[gd_scene load_steps=7 format=3 uid="uid://swngeg5rhhdh"]
 
 [ext_resource type="Script" path="res://SRC/main.gd" id="1_fhg7w"]
+[ext_resource type="PackedScene" uid="uid://du0mt2887weg6" path="res://Scenes/Player1.tscn" id="1_sviiv"]
 [ext_resource type="Texture2D" uid="uid://dc6uuhw4f1xqy" path="res://Assets/icon.svg" id="2_ro2f5"]
 [ext_resource type="PackedScene" uid="uid://drx2k35x5ck51" path="res://Scenes/Artifact.tscn" id="3_ghsqg"]
+[ext_resource type="PackedScene" uid="uid://dn7gpvvjrgnea" path="res://Scenes/Player2.tscn" id="5_a55v7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msm44"]
 size = Vector2(128, 126)
@@ -49,6 +51,12 @@ texture = ExtResource("2_ro2f5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 shape = SubResource("RectangleShape2D_msm44")
+
+[node name="Player1" parent="." instance=ExtResource("1_sviiv")]
+position = Vector2(281, 307)
+
+[node name="Player2" parent="." instance=ExtResource("5_a55v7")]
+position = Vector2(746, 281)
 
 [node name="Artifact" parent="." instance=ExtResource("3_ghsqg")]
 position = Vector2(447.217, 259.151)
