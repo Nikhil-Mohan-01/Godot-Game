@@ -93,6 +93,12 @@ func _game_input() -> void:
 		_add_angular_velocity((dlr * 0.3) * 0.02)
 
 func _process(delta):
+	if Global.player2:
+		scale = Vector2(0.5, 1)
+		rotation = 0
+	elif Global.frog2: 
+		scale = Vector2(0.25, 0.25)
+		
 	if Global.frog2:
 		rotation = -angle
 		angular_acceleration = ((-gravity * delta) / arm_length) * sin(angle)

@@ -1,55 +1,32 @@
 [gd_scene load_steps=5 format=3 uid="uid://drx2k35x5ck51"]
 
+[ext_resource type="Script" path="res://SRC/Artifact.gd" id="1_dfmv4"]
 [ext_resource type="Texture2D" uid="uid://dc6uuhw4f1xqy" path="res://Assets/icon.svg" id="1_jpf8u"]
-
-[sub_resource type="GDScript" id="GDScript_3wrtb"]
-script/source = "extends RigidBody2D
-
-@onready var Player1 = get_parent().get_node(\"Player1\")
-@onready var Player2 = get_parent().get_node(\"Player2\")
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-func _on_area_2d_body_entered(body):
-	if body == Player1:
-		if Input.is_key_pressed(KEY_E):
-			print(\"P1 Picked\")
-	elif body == Player2:
-		if Input.is_key_pressed(KEY_U):
-			print(\"P2 Picked\")
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qk01v"]
-size = Vector2(126, 127)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otucn"]
 size = Vector2(126, 127)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qk01v"]
+size = Vector2(126, 127)
+
 [node name="Artifact" type="RigidBody2D"]
 collision_layer = 8
-script = SubResource("GDScript_3wrtb")
+script = ExtResource("1_dfmv4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_qk01v")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jpf8u")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-texture = ExtResource("1_jpf8u")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_otucn")
 debug_color = Color(0.68967, 0.498292, 0, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_qk01v")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
