@@ -11,6 +11,17 @@ config_version=5
 [application]
 
 config/name="Retriver"
-run/main_scene="res://Scenes/main.tscn"
+run/main_scene="res://Scenes/contols.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://Assets/icon.svg"
+
+[autoload]
+
+Global="*res://SRC/global.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"

@@ -1,10 +1,10 @@
 extends Node
 
 var player1 = false
-var player1Frog = false
+var frog1 = false
 
 var player2 = false
-var player2Frog = false
+var frog2 = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

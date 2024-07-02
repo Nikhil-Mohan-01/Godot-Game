@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://3abke745wp16"]
+[gd_scene load_steps=2 format=3 uid="uid://3abke745wp16"]
 
-[node name="MainMenu" type="Node2D"]
+[ext_resource type="Script" path="res://SRC/contols.gd" id="1_soi05"]
+
+[node name="Controls" type="Node2D"]
+script = ExtResource("1_soi05")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 203.0
@@ -41,3 +44,16 @@ offset_top = 97.0
 offset_right = 343.0
 offset_bottom = 128.0
 text = "Frog"
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 194.0
+offset_top = 170.0
+offset_right = 253.0
+offset_bottom = 201.0
+text = "Start"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
