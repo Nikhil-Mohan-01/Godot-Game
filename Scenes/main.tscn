@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://swngeg5rhhdh"]
+[gd_scene load_steps=10 format=3 uid="uid://swngeg5rhhdh"]
 
 [ext_resource type="Script" path="res://SRC/main.gd" id="1_fhg7w"]
 [ext_resource type="PackedScene" uid="uid://du0mt2887weg6" path="res://Scenes/Player1.tscn" id="1_sviiv"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dn7gpvvjrgnea" path="res://Scenes/Player2.tscn" id="5_a55v7"]
 [ext_resource type="PackedScene" uid="uid://dw3j84j3iibxo" path="res://Scenes/portal.tscn" id="6_upy1o"]
 [ext_resource type="PackedScene" uid="uid://chr0jcn2erqx" path="res://Scenes/portal_reverse.tscn" id="7_7goin"]
+[ext_resource type="PackedScene" uid="uid://lahch8tqoy04" path="res://Scenes/top_player_test_1.tscn" id="8_xismq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msm44"]
 size = Vector2(128, 126)
@@ -72,3 +73,8 @@ collision_mask = 2
 [node name="PortalReverse" parent="." instance=ExtResource("7_7goin")]
 position = Vector2(901, 534)
 scale = Vector2(0.33, 0.33)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="TopPlayerTest1" parent="Timer" instance=ExtResource("8_xismq")]
+position = Vector2(606, 218)
