@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const speed = 400.0
+const speed = 50
 
 var friction = true
 
