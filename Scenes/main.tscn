@@ -1,80 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://swngeg5rhhdh"]
+[gd_scene load_steps=4 format=3 uid="uid://c0s5m2ds1x5fm"]
 
-[ext_resource type="Script" path="res://SRC/main.gd" id="1_fhg7w"]
-[ext_resource type="PackedScene" uid="uid://du0mt2887weg6" path="res://Scenes/Player1.tscn" id="1_sviiv"]
-[ext_resource type="Texture2D" uid="uid://dc6uuhw4f1xqy" path="res://Assets/icon.svg" id="2_ro2f5"]
-[ext_resource type="PackedScene" uid="uid://drx2k35x5ck51" path="res://Scenes/Artifact.tscn" id="3_ghsqg"]
-[ext_resource type="PackedScene" uid="uid://dn7gpvvjrgnea" path="res://Scenes/Player2.tscn" id="5_a55v7"]
-[ext_resource type="PackedScene" uid="uid://dw3j84j3iibxo" path="res://Scenes/portal.tscn" id="6_upy1o"]
-[ext_resource type="PackedScene" uid="uid://chr0jcn2erqx" path="res://Scenes/portal_reverse.tscn" id="7_7goin"]
+[ext_resource type="Texture2D" uid="uid://dvmy32ow6c8n4" path="res://Assets/map_test.jpeg" id="1_1v6yj"]
+[ext_resource type="PackedScene" uid="uid://c137gicpn6nx3" path="res://Scenes/level_portal.tscn" id="3_ed20m"]
 [ext_resource type="PackedScene" uid="uid://lahch8tqoy04" path="res://Scenes/top_player_test_1.tscn" id="8_xismq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_msm44"]
-size = Vector2(128, 126)
-
 [node name="main" type="Node2D"]
-script = ExtResource("1_fhg7w")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="MapTest" type="Sprite2D" parent="."]
+position = Vector2(3186, 2746.5)
+scale = Vector2(22.752, 14.11)
+texture = ExtResource("1_1v6yj")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="TopPlayerTest1" parent="." instance=ExtResource("8_xismq")]
+position = Vector2(1562, 2918)
 
-[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer"]
-layout_mode = 2
-text = "Lives "
+[node name="Camera2D" type="Camera2D" parent="TopPlayerTest1"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(6, 313)
-scale = Vector2(1, 4.94172)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-texture = ExtResource("2_ro2f5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_msm44")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(1153, 338)
-scale = Vector2(1, 4.94172)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
-texture = ExtResource("2_ro2f5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-shape = SubResource("RectangleShape2D_msm44")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(578, 644)
-scale = Vector2(10.14, 0.501226)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
-texture = ExtResource("2_ro2f5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-shape = SubResource("RectangleShape2D_msm44")
-
-[node name="Player1" parent="." instance=ExtResource("1_sviiv")]
-position = Vector2(281, 307)
-
-[node name="Player2" parent="." instance=ExtResource("5_a55v7")]
-position = Vector2(746, 281)
-
-[node name="Artifact" parent="." instance=ExtResource("3_ghsqg")]
-position = Vector2(447.217, 259.151)
-
-[node name="Portal" parent="." instance=ExtResource("6_upy1o")]
-position = Vector2(171, 539)
-scale = Vector2(0.33, 0.33)
-collision_layer = 16
-collision_mask = 2
-
-[node name="PortalReverse" parent="." instance=ExtResource("7_7goin")]
-position = Vector2(901, 534)
-scale = Vector2(0.33, 0.33)
-
-[node name="Timer" type="Timer" parent="."]
-
-[node name="TopPlayerTest1" parent="Timer" instance=ExtResource("8_xismq")]
-position = Vector2(606, 218)
+[node name="LevelPortal" parent="." instance=ExtResource("3_ed20m")]
+position = Vector2(3932, 2557)
