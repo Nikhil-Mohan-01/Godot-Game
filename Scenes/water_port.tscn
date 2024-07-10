@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgxkrmavl6cqw"]
+
+[ext_resource type="Script" path="res://SRC/waterPort.gd" id="1_1qrg7"]
+[ext_resource type="Texture2D" uid="uid://dc6uuhw4f1xqy" path="res://Assets/icon.svg" id="2_lrmoa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3hph"]
+size = Vector2(93, 244)
+
+[node name="waterPort" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_1qrg7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.72, 1.92)
+texture = ExtResource("2_lrmoa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_p3hph")
+debug_color = Color(0.780631, 0.126212, 1, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

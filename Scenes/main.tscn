@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c0s5m2ds1x5fm"]
+[gd_scene load_steps=22 format=3 uid="uid://c0s5m2ds1x5fm"]
 
 [ext_resource type="Texture2D" uid="uid://bbcldonby0l3x" path="res://Assets/Forest BETA V3/Forest Cliff.png" id="1_wqsa0"]
 [ext_resource type="Texture2D" uid="uid://d4bwi7umcexs3" path="res://Assets/Forest BETA V3/Forest Props.png" id="2_a2ss2"]
@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cyibad33tof37" path="res://Assets/Forest BETA V3/Water Tileset.png" id="3_pjtf7"]
 [ext_resource type="Texture2D" uid="uid://cq6aaexj8ywet" path="res://Assets/Forest BETA V3/Forest Structures.png" id="4_01mb4"]
 [ext_resource type="Texture2D" uid="uid://i8yhdrdhaapw" path="res://Assets/Forest BETA V3/Sample.png" id="4_h8f4u"]
+[ext_resource type="PackedScene" uid="uid://bgxkrmavl6cqw" path="res://Scenes/water_port.tscn" id="7_b26vq"]
 [ext_resource type="PackedScene" uid="uid://lahch8tqoy04" path="res://Scenes/top_player_test_1.tscn" id="8_xismq"]
+[ext_resource type="PackedScene" uid="uid://dj33yqxlwpq0t" path="res://Scenes/bottom_port.tscn" id="9_6o8db"]
+[ext_resource type="PackedScene" uid="uid://bx8vdah7t6uvs" path="res://Scenes/person_port.tscn" id="9_xeni3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vy0ra"]
 texture = ExtResource("1_wqsa0")
@@ -9623,7 +9626,6 @@ scale = Vector2(0.085, 0.085)
 
 [node name="Camera2D" type="Camera2D" parent="TopPlayerTest1"]
 position = Vector2(6317.64, -600)
-scale = Vector2(1, 1)
 zoom = Vector2(1.025, 0.865)
 
 [node name="decor" type="TileMap" parent="."]
@@ -9634,6 +9636,18 @@ layer_0/tile_data = PackedInt32Array(1048573, 0, 11, 1114107, 1572864, 9, 117964
 [node name="LevelPortal" parent="." instance=ExtResource("3_ed20m")]
 position = Vector2(958, 723)
 scale = Vector2(0.07, 0.07)
+
+[node name="waterPort" parent="." instance=ExtResource("7_b26vq")]
+position = Vector2(1193, -219)
+scale = Vector2(0.112952, 0.0613612)
+
+[node name="personPort" parent="." instance=ExtResource("9_xeni3")]
+position = Vector2(-65, -118)
+scale = Vector2(0.174756, 0.063693)
+
+[node name="BottomPort" parent="." instance=ExtResource("9_6o8db")]
+position = Vector2(-254, 612)
+scale = Vector2(0.0800025, 0.0799853)
 
 [node name="buildings" type="TileMap" parent="."]
 scale = Vector2(0.11, 0.11)
