@@ -1,9 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://swngeg5rhhdh"]
+[gd_scene load_steps=8 format=3 uid="uid://swngeg5rhhdh"]
 
 [ext_resource type="Script" path="res://SRC/Level.gd" id="1_gnp20"]
 [ext_resource type="Texture2D" uid="uid://dc6uuhw4f1xqy" path="res://Assets/icon.svg" id="2_41cv4"]
-[ext_resource type="PackedScene" uid="uid://du0mt2887weg6" path="res://Scenes/Player1.tscn" id="3_hmf2q"]
-[ext_resource type="PackedScene" uid="uid://dn7gpvvjrgnea" path="res://Scenes/Player2.tscn" id="4_s7a1o"]
 [ext_resource type="PackedScene" uid="uid://drx2k35x5ck51" path="res://Scenes/Artifact.tscn" id="5_u7dtj"]
 [ext_resource type="PackedScene" uid="uid://dw3j84j3iibxo" path="res://Scenes/portal.tscn" id="6_ccu4m"]
 [ext_resource type="PackedScene" uid="uid://chr0jcn2erqx" path="res://Scenes/portal_reverse.tscn" id="7_h0nmn"]
@@ -55,11 +53,8 @@ texture = ExtResource("2_41cv4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 shape = SubResource("RectangleShape2D_msm44")
 
-[node name="Player1" parent="." instance=ExtResource("3_hmf2q")]
-position = Vector2(281, 307)
-
-[node name="Player2" parent="." instance=ExtResource("4_s7a1o")]
-position = Vector2(746, 281)
+[node name="TopPlayerTest1" parent="." instance=ExtResource("8_80601")]
+position = Vector2(606, 218)
 
 [node name="Artifact" parent="." instance=ExtResource("5_u7dtj")]
 position = Vector2(447.217, 259.151)
@@ -75,6 +70,3 @@ position = Vector2(901, 534)
 scale = Vector2(0.33, 0.33)
 
 [node name="Timer" type="Timer" parent="."]
-
-[node name="TopPlayerTest1" parent="Timer" instance=ExtResource("8_80601")]
-position = Vector2(606, 218)

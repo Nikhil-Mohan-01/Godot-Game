@@ -13,3 +13,6 @@ func _process(delta):
 
 func _on_body_entered(body):
 	get_tree().change_scene_to_file("res://Scenes/Level.tscn")
+	get_parent().get_node("TopPlayerTest1").queue_free()
+	
+	Global.inLevel = true
