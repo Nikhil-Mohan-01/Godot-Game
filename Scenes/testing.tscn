@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://e1d0wgy06x6v"]
+
+[ext_resource type="PackedScene" uid="uid://bjwvmre5tue4j" path="res://Scenes/joystick.tscn" id="1_m3kd3"]
+[ext_resource type="Texture2D" uid="uid://dc6uuhw4f1xqy" path="res://Assets/icon.svg" id="2_kidk1"]
+[ext_resource type="Script" path="res://SRC/player_test.gd" id="2_pjbqs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t87rn"]
+size = Vector2(126, 127)
+
+[node name="Testing" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Joystick" parent="Camera2D" instance=ExtResource("1_m3kd3")]
+position = Vector2(-763, 378)
+scale = Vector2(0.14, 0.14)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_pjbqs")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_kidk1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_t87rn")

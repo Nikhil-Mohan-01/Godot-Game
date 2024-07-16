@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c0s5m2ds1x5fm"]
+[gd_scene load_steps=23 format=3 uid="uid://c0s5m2ds1x5fm"]
 
 [ext_resource type="Texture2D" uid="uid://bbcldonby0l3x" path="res://Assets/Forest BETA V3/Forest Cliff.png" id="1_wqsa0"]
 [ext_resource type="Texture2D" uid="uid://d4bwi7umcexs3" path="res://Assets/Forest BETA V3/Forest Props.png" id="2_a2ss2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cyibad33tof37" path="res://Assets/Forest BETA V3/Water Tileset.png" id="3_pjtf7"]
 [ext_resource type="Texture2D" uid="uid://cq6aaexj8ywet" path="res://Assets/Forest BETA V3/Forest Structures.png" id="4_01mb4"]
 [ext_resource type="Texture2D" uid="uid://i8yhdrdhaapw" path="res://Assets/Forest BETA V3/Sample.png" id="4_h8f4u"]
+[ext_resource type="PackedScene" uid="uid://bjwvmre5tue4j" path="res://Scenes/joystick.tscn" id="6_w2fh8"]
 [ext_resource type="PackedScene" uid="uid://bgxkrmavl6cqw" path="res://Scenes/water_port.tscn" id="7_b26vq"]
 [ext_resource type="PackedScene" uid="uid://lahch8tqoy04" path="res://Scenes/top_player_test_1.tscn" id="8_xismq"]
 [ext_resource type="PackedScene" uid="uid://dj33yqxlwpq0t" path="res://Scenes/bottom_port.tscn" id="9_6o8db"]
@@ -9627,6 +9628,10 @@ scale = Vector2(0.085, 0.085)
 [node name="Camera2D" type="Camera2D" parent="TopPlayerTest1"]
 position = Vector2(6317.64, -600)
 zoom = Vector2(1.025, 0.865)
+
+[node name="Joystick" parent="TopPlayerTest1" instance=ExtResource("6_w2fh8")]
+position = Vector2(0.00143612, 0.000718061)
+scale = Vector2(0.13, 0.13)
 
 [node name="decor" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_a0xql")
